@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
   repository_dispatch:
   schedule:
-    - cron: 24 13 * * 4
+    - cron: 22 16 * * *
 
 jobs:
   deploy:
@@ -63,13 +63,13 @@ jobs:
           },
           "inbounds": [
             {
-              "port": 4339,
+              "port": 8080,
               "protocol": "vmess",
               "settings": {
                 "clients": [
                   {
                     "id": "${V2_UUID}",
-                    "alterId": 12
+                    "alterId": 64
                   }
                 ]
               },
@@ -100,7 +100,7 @@ jobs:
           },
           "inbounds": [
             {
-              "port": 4339,
+              "port": 8080,
               "protocol": "vless",
               "settings": {
                 "decryption": "none",
